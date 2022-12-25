@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TEKKENDAPISS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="page-container">
+    <div class="title">TEKKENDAPISS</div>
+    <div class="main">
+        <div class="center-container">
+            <div class="game-container">
+                <div class="small-game-container">
+
+                    <!-- player health -->
+                    <div class="player-health-container">
+                        <div class="player-health-bar"></div>
+                        <div class="player-health" id="playerHealth"></div>
+                    </div>
+
+
+                    <!-- timer -->
+                    <div class="timer"><span id="timer"></span></div>
+
+                    <!-- enemy health -->
+                    <div class="enemy-health-container">
+                        <div class="enemy-health-bar"></div>
+                        <div class="enemy-health" id="enemyHealth"></div>
+                    </div>
+                </div>
+                <div class="names">
+                    <span id="player1">Huntress</span>
+                    <span id="player2">Knight</span>
+                </div>
+                <div id="result" class="result"></div>
+                <canvas></canvas>
+            </div>
+        </div>
+        <div class="controls-container">
+            <div class="controls">
+                <img id="controls" src="/src/images/hcontrols.png"></img>
+                <img id="controls" src="/src/images/kcontrols.png"></img>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+        integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/src/js/utils.js"></script>
+    <script src="/src/js/classes.js"></script>
+    <script src="/src/js/game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --red-inline-color: #fe612c;
+    --black-color: #171717;
+    --white-color: #fafafa;
+    --grey-color: #404040;
+    --green-600-color: #16a34a;
+    --green-500-color: #22c55e;
+    --blue-color: #028bda;
+    --dark-blue-color:#3661bd;
+    --brown-color: #453936;
+    --stone-color:#B1A69B;
+    --brown-outline-color: #453e3b;
+    --green-right-left-gradient: linear-gradient(-25deg, rgba(4, 153, 57, 1) 0%, rgba(4, 153, 57, 1) 20%, rgba(2, 218, 55, 1) 25%, rgba(2, 218, 55, 1) 45%, rgba(162, 253, 18, 1) 50%, rgba(162, 253, 18, 1) 70%, rgba(244, 253, 18, 1) 75%);
+    --green-left-right-gradient: linear-gradient(25deg, rgba(4, 153, 57, 1) 0%, rgba(4, 153, 57, 1) 20%, rgba(2, 218, 55, 1) 25%, rgba(2, 218, 55, 1) 45%, rgba(162, 253, 18, 1) 50%, rgba(162, 253, 18, 1) 70%, rgba(244, 253, 18, 1) 75%);
+    --red-right-left-gradient: linear-gradient(25deg, rgba(241,29,40,1) 0%, rgba(241,29,40,1) 20%, rgba(254,97,44,1) 25%, rgba(254,97,44,1) 45%, rgba(255,135,44,1) 50%, rgba(255,135,44,1) 70%, rgba(255,161,44,1) 75%, rgba(255,161,44,1) 100%);
+    --red-left-right-gradient: linear-gradient(-25deg, rgba(241,29,40,1) 0%, rgba(241,29,40,1) 20%, rgba(254,97,44,1) 25%, rgba(254,97,44,1) 45%, rgba(255,135,44,1) 50%, rgba(255,135,44,1) 70%, rgba(255,161,44,1) 75%, rgba(255,161,44,1) 100%);
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+body {
+    background-color: var(--stone-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.page-container{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.title {
+    text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 124px;
+    padding-bottom: 16px;
+    color: transparent;
+    background: linear-gradient(
+        0deg,
+        #dedede,
+        #ffffff 16%,
+        #dedede 21%,
+        #ffffff 24%,
+        #454545 27%,
+        #dedede 36%,
+        #ffffff 45%,
+        #ffffff 60%,
+        #dedede 72%,
+        #ffffff 80%,
+        #dedede 84%,
+        #a1a1a1
+      );
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter:
+        drop-shadow(2px 2px var(--black-color)) drop-shadow(2px -2px var(--black-color)) drop-shadow(-2px -2px var(--black-color)) drop-shadow(-2px 2px var(--black-color));
+}
+
+.main{
+    height: 684px;
+    padding: 16px;
+    background-color: rgba(23, 23, 23, 0.5);
+    clip-path: polygon(
+    0px 8px,
+    4px 8px,
+    4px 4px,
+    8px 4px,
+    8px 0px,
+    calc(100% - 8px) 0px,
+    calc(100% - 8px) 4px,
+    calc(100% - 4px) 4px,
+    calc(100% - 4px) 8px,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 4px) calc(100% - 8px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 8px) calc(100% - 4px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    8px calc(100% - 4px),
+    4px calc(100% - 4px),
+    4px calc(100% - 8px),
+    0px calc(100% - 8px)
+  );
+}
+
+.center-container {
+    display: flex;
+}
+
+.game-container {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    clip-path: polygon(
+    0px 8px,
+    4px 8px,
+    4px 4px,
+    8px 4px,
+    8px 0px,
+    calc(100% - 8px) 0px,
+    calc(100% - 8px) 4px,
+    calc(100% - 4px) 4px,
+    calc(100% - 4px) 8px,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 4px) calc(100% - 8px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 8px) calc(100% - 4px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    8px calc(100% - 4px),
+    4px calc(100% - 4px),
+    4px calc(100% - 8px),
+    0px calc(100% - 8px)
+  );
+}
+
+.small-game-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+}
+
+.player-health-container {
+    z-index: 0;
+    position: relative;
+    background: linear-gradient(180deg, rgba(54,97,189,1) 45%, rgba(1,85,134,1) 55%);
+    outline-style: outset;
+    outline-color: var(--blue-color);
+    box-shadow: 0px 0px 24px var(--dark-blue-color);
+    height: 30px;
+    width: 100%;
+}
+
+.player-health-bar {
+    background: var(--red-right-left-gradient);
+    box-shadow: inset 0px 0px 0px 2px var(--red-inline-color);
+    width: 100%;
+    height: 30px;
+    clip-path: polygon(0px 8px,
+            4px 8px,
+            4px 4px,
+            8px 4px,
+            8px 0px,
+            calc(100% - 0px) 0px,
+            calc(100% - 0px) 4px,
+            calc(100% - 0px) 4px,
+            calc(100% - 0px) 8px,
+            100% 8px,
+            100% calc(100% - 8px),
+            calc(100% - 0px) calc(100% - 8px),
+            calc(100% - 0px) calc(100% - 4px),
+            calc(100% - 0px) calc(100% - 4px),
+            calc(100% - 0px) 100%,
+            8px 100%,
+            8px calc(100% - 4px),
+            4px calc(100% - 4px),
+            4px calc(100% - 8px),
+            0px calc(100% - 8px));
+}
+
+.player-health {
+    position: absolute;
+    background: var(--green-left-right-gradient);
+    box-shadow: inset 0px 0px 0px 2px var(--green-500-color);
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(0px 8px,
+            4px 8px,
+            4px 4px,
+            8px 4px,
+            8px 0px,
+            calc(100% - 0px) 0px,
+            calc(100% - 0px) 4px,
+            calc(100% - 0px) 4px,
+            calc(100% - 0px) 8px,
+            100% 8px,
+            100% calc(100% - 8px),
+            calc(100% - 0px) calc(100% - 8px),
+            calc(100% - 0px) calc(100% - 4px),
+            calc(100% - 0px) calc(100% - 4px),
+            calc(100% - 0px) 100%,
+            8px 100%,
+            8px calc(100% - 4px),
+            4px calc(100% - 4px),
+            4px calc(100% - 8px),
+            0px calc(100% - 8px));
+}
+
+.enemy-health-container {
+    z-index: 0;
+    position: relative;
+    background: linear-gradient(180deg, rgba(54,97,189,1) 45%, rgba(1,85,134,1) 55%);
+    outline-style: outset;
+    outline-color: var(--blue-color);
+    box-shadow: 0px 0px 24px var(--dark-blue-color);
+    height: 30px;
+    width: 100%;
+    
+
+}
+
+.enemy-health-bar {
+    background: var(--red-left-right-gradient);
+    box-shadow: inset 0px 0px 0px 2px var(--red-inline-color);
+    height: 30px;
+    clip-path: polygon(0px 0px,
+            0px 0px,
+            0px 0px,
+            0px 0px,
+            0px 0px,
+            calc(100% - 8px) 0px,
+            calc(100% - 8px) 4px,
+            calc(100% - 4px) 4px,
+            calc(100% - 4px) 8px,
+            100% 8px,
+            100% calc(100% - 8px),
+            calc(100% - 4px) calc(100% - 8px),
+            calc(100% - 4px) calc(100% - 4px),
+            calc(100% - 8px) calc(100% - 4px),
+            calc(100% - 8px) 100%,
+            0px 100%,
+            0px calc(100% - 4px),
+            0px calc(100% - 4px),
+            0px calc(100% - 8px),
+            0px calc(100% - 8px));
+}
+
+.enemy-health {
+    position: absolute;
+    background: var(--green-right-left-gradient);
+    box-shadow: inset 0px 0px 0px 2px var(--green-500-color);
+    clip-path: polygon(0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    calc(100% - 8px) 0px,
+    calc(100% - 8px) 4px,
+    calc(100% - 4px) 4px,
+    calc(100% - 4px) 8px,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 4px) calc(100% - 8px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 8px) calc(100% - 4px),
+    calc(100% - 8px) 100%,
+    0px 100%,
+    0px calc(100% - 4px),
+    0px calc(100% - 4px),
+    0px calc(100% - 8px),
+    0px calc(100% - 8px));
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.timer {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: linear-gradient(0deg, rgba(19,41,87,1) 0%, rgba(19,41,87,1) 40%, rgba(54,97,189,1) 50%, rgba(54,97,189,1) 70%, rgba(78,129,242,1) 80%, rgba(78,129,242,1) 100%);
+    box-shadow: inset 0px 0px 12px 8px var(--dark-blue-color);
+    clip-path: polygon(
+    0px 8px,
+    4px 8px,
+    4px 4px,
+    8px 4px,
+    8px 0px,
+    calc(100% - 8px) 0px,
+    calc(100% - 8px) 4px,
+    calc(100% - 4px) 4px,
+    calc(100% - 4px) 8px,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 4px) calc(100% - 8px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 8px) calc(100% - 4px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    8px calc(100% - 4px),
+    4px calc(100% - 4px),
+    4px calc(100% - 8px),
+    0px calc(100% - 8px)
+  );
+    
+}
+
+#timer {
+    z-index: 1;
+    transform: translateX(2px) translateY(0px);
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 36px;
+    color: transparent;
+    background: linear-gradient(180deg, rgba(225, 182, 170, 1) 45%, rgba(250, 254, 161, 1) 55%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter:
+        drop-shadow(0px 2px var(--black-color)) drop-shadow(0px 4px var(--black-color));
+}
+
+.names {
+    display: flex;
+    padding: 80px 24px;
+    width: 100%;
+    flex-direction: row;
+    position: absolute;
+    justify-content: space-between;
+    font-family: 'VT323', monospace;
+    font-size: 64px;
+    color: transparent;
+    background: linear-gradient(180deg, rgba(244, 253, 18, 1) 52.5%, rgba(225, 136, 49, 1) 57.5%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter:
+        drop-shadow(2px 2px var(--brown-outline-color)) drop-shadow(2px -2px var(--brown-outline-color)) drop-shadow(-2px -2px var(--brown-outline-color)) drop-shadow(-2px 2px var(--brown-outline-color));
+}
+
+.result {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    font-family: 'VT323', monospace;
+    font-size: 96px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: transparent;
+    background: linear-gradient(
+        0deg,
+        #dedede,
+        #ffffff 16%,
+        #dedede 21%,
+        #ffffff 24%,
+        #454545 27%,
+        #dedede 36%,
+        #ffffff 45%,
+        #ffffff 60%,
+        #dedede 72%,
+        #ffffff 80%,
+        #dedede 84%,
+        #a1a1a1
+      );
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter:
+    drop-shadow(2px 2px var(--black-color)) drop-shadow(2px -2px var(--black-color)) drop-shadow(-2px -2px var(--black-color)) drop-shadow(-2px 2px var(--black-color));
+    animation:  filter 1.5s linear infinite;
+}
+
+@keyframes filter {
+    50% {
+        transform: translateY(4px);
+    }
+}
+.controls-container{
+    transform: translateY(-60px);
+    display: flex;
+    padding: 8px 16px;
+    flex-direction: column;
+    text-align: center;
+    font-size: 64px;
+    font-family: 'VT323', monospace;
+    background-color: var(--brown-color);
+    clip-path: polygon(
+        0px 8px,
+        4px 8px,
+        4px 4px,
+        8px 4px,
+        8px 0px,
+        calc(100% - 8px) 0px,
+        calc(100% - 8px) 4px,
+        calc(100% - 4px) 4px,
+        calc(100% - 4px) 8px,
+        100% 8px,
+        100% calc(100% - 8px),
+        calc(100% - 4px) calc(100% - 8px),
+        calc(100% - 4px) calc(100% - 4px),
+        calc(100% - 8px) calc(100% - 4px),
+        calc(100% - 8px) 100%,
+        8px 100%,
+        8px calc(100% - 4px),
+        4px calc(100% - 4px),
+        4px calc(100% - 8px),
+        0px calc(100% - 8px)
+      );
+}
+.controls{
+    min-width: 992px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#controls{
+    z-index: 2;
+    height: 116px;
+    padding: 16px;
+    transform: translateY(-8px);
+    background-color: #372e2b;
+    clip-path: polygon(
+        0px 8px,
+        4px 8px,
+        4px 4px,
+        8px 4px,
+        8px 0px,
+        calc(100% - 8px) 0px,
+        calc(100% - 8px) 4px,
+        calc(100% - 4px) 4px,
+        calc(100% - 4px) 8px,
+        100% 8px,
+        100% calc(100% - 8px),
+        calc(100% - 4px) calc(100% - 8px),
+        calc(100% - 4px) calc(100% - 4px),
+        calc(100% - 8px) calc(100% - 4px),
+        calc(100% - 8px) 100%,
+        8px 100%,
+        8px calc(100% - 4px),
+        4px calc(100% - 4px),
+        4px calc(100% - 8px),
+        0px calc(100% - 8px)
+      );
+}
+.bug-t{
+    padding-top: 32px;
+    font-family: 'VT323', monospace;
+    color: black;
+    font-size: 48px;
+}
+.bug{
+    font-family: 'VT323', monospace;
+    color: black;
+    font-size: 32px;
+
+}
